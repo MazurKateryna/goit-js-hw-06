@@ -1,4 +1,6 @@
 import users from './users.js'
+
+
 // Задание 1
 const getUserNames = users => {
   const names = users.map(user => user.name);
@@ -13,10 +15,8 @@ const getUsersWithEyeColor = (users, color) => {
   const filterColor = users.filter((user) => {
     return user.eyeColor === color;
   })
-  const eyeColorName = filterColor.map((user) => {
-    return user.name;
-  })
-  return eyeColorName;
+
+  return filterColor;
 };
 
 console.log(getUsersWithEyeColor(users, 'blue')); // [объект Moore Hensley, объект Sharlene Bush, объект Carey Barr]
@@ -40,7 +40,7 @@ console.log(getInactiveUsers(users)); // [объект Moore Hensley, объек
 // Задание 5
 const getUserWithEmail = (users, email) => {
   const findName = users.find((user)=> user.email === email);
-  return findName.name;
+  return findName;
 };
 
 console.log(getUserWithEmail(users, 'shereeanthony@kog.com')); // {объект пользователя Sheree Anthony}
